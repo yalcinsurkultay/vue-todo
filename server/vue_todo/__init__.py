@@ -6,7 +6,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 app.config.update(
-    SQLALCHEMY_DATABASE_URI='mysql://root@localhost/vue_todo',
+    SQLALCHEMY_DATABASE_URI='mysql://root:very_secure_password@vue-todo-db/vue_todo',
     SQLALCHEMY_TRACK_MODIFICATIONS=False,
 )
 db = SQLAlchemy(app)

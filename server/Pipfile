@@ -11,6 +11,8 @@ flask-marshmallow = "*"
 flask-cors = "*"
 sqlalchemy = "*"
 mysqlclient = "*"
+gunicorn = "*"
+marshmallow-sqlalchemy = "*"
 
 [dev-packages]
 "flake8" = "*"

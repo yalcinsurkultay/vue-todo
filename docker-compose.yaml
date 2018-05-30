@@ -1,0 +1,28 @@
+version: '3.0'
+
+services:
+  vue-todo-db:
+    image: mysql:5.7.22
+    environment:
+      MYSQL_ROOT_PASSWORD: 'very_secure_password'
+      MYSQL_DATABASE: 'vue_todo'
+    volumes:
+        - ./database:/var/lib/mysql
+    expose:
+     - "3306"
+
+  vue-todo-api:
+    image: vue-todo-api
+    environment:
+      FLASK_APP: 'vue_todo/__init__.py'
+    ports:
+        - "8081:80"
+    depends_on:
+        - vue-todo-db
+
+  vue-todo-frontend:
+    image: vue-todo-frontend
+    ports:
+        - "8080:80"
+    links:
+      - vue-todo-api
