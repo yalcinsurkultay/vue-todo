@@ -3,6 +3,7 @@ Simple todo app demonstrating Vue.js/Vuex working with a REST API.
 
 ## Requirements
 Docker >= 17.05
+
 Docker Compose
 
 On desktop systems like Docker for Mac and Windows, Docker Compose is included as part of those desktop installs.
