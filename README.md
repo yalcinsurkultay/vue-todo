@@ -90,14 +90,14 @@ docker exec -it vuetodo_vue-todo-api_1 flask db upgrade
 docker exec -it vuetodo_vue-todo-api_1 python seed.py
 
 ```
-That's it! You can hit http://localhost:8081/ on your browser.
+That's it! You can hit http://localhost:8080/ on your browser.
 
 #### Some pain points
 - When the JavaScript runs in a browser (outside of Docker) you can not use app because that is only available inside the Docker network (via the embedded DNS server). So it had to be hardcoded for the moment. Possible solution is a front-end proxy.
 
 ```
 const ax = axios.create({
-  baseURL: 'http://localhost:8080/',
+  baseURL: 'http://localhost:8081/',
 });
 ```
 
